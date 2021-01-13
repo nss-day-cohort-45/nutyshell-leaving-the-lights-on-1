@@ -10,6 +10,7 @@ eventHub.addEventListener("click", e => {
     if (e.target.id === "register--button") {
         const username = document.querySelector("#register--username").value
         const email = document.querySelector("#register--email").value
+        const zip = document.querySelector("#register--zip").value
 
         if (username !== "" && email !== "") {
             // Does the user exist?
@@ -24,7 +25,8 @@ eventHub.addEventListener("click", e => {
                         },
                         body: JSON.stringify({
                             "username": username,
-                            "email": email
+                            "email": email,
+                            "zip": zip
                         })
                     })
                         .then(response => response.json())
@@ -49,6 +51,7 @@ const render = () => {
         <section class="register">
             <input id="register--username" type="text" placeholder="Enter your username">
             <input id="register--email" type="text" placeholder="Enter your email address">
+            <input id="register--zip" type="text" placeholder="Enter your  Zip Code">
 
             <button id="register--button">Register</button>
         </section>
