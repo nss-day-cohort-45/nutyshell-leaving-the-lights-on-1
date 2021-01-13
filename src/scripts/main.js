@@ -2,9 +2,6 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
-LoginForm()
-RegisterForm()
-
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -13,3 +10,6 @@ RegisterForm()
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
+
+LoginForm()
+RegisterForm()
