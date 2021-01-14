@@ -1,6 +1,8 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { ForumForm } from "./forum/ForumsForm.js";
+import { saveForumButton } from "./forum/SaveForumButton.js";
 
 
 /*
@@ -13,3 +15,4 @@ import { Nutshell } from "./Nutshell.js"
 
 LoginForm()
 RegisterForm()
+
