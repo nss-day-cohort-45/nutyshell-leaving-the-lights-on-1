@@ -1,7 +1,7 @@
 import { EventHTMLConverter } from './EventHTMLConverter.js'
 import { useEvents, getEvents } from './EventsProvider.js'
 
-const eventTarget = document.querySelector(".forumAndEventDiv")
+const eventTarget = document.querySelector(".eventDiv")
 
 let eventCards = []
 
