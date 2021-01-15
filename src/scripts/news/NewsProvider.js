@@ -7,7 +7,13 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(newsStateChangedEvent)
 }
 
-export const useNews = () => news.slice()
+export const useNews = () => {
+    const sortedByDate = news.sort(
+        (currentnews, nextNews) =>
+        Date.parse(currentnews.date) - Date.parse(nextNews.date)
+    )
+    return sortedByDate
+}
 
 export const getNews = () => {
     return fetch("http://localhost:8088/news")
@@ -16,7 +22,7 @@ export const getNews = () => {
             news = parsedNews
         })
 }
-export const saveNote = newNews => {
+export const saveNews = newNews => {
     let stringifiedObj = JSON.stringify(newNews)
     return fetch('http://localhost:8088/news', {
             method: "POST",

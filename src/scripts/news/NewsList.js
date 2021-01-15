@@ -1,12 +1,23 @@
 import { getNews, useNews, deleteNews } from "./NewsProvider.js";
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("deleteNews--")) {
-        const [prefix, newsId] = clickEvent.target.id.split("--")
-        deleteNews(newsId).then(
-            () => {
-                const updatedNews = useNews()
-                render(updatedNews)
-            }
-        )
-    }
+import { NewsHTMLConverter } from "./NewsHTMLConverter.js";
+
+const newsLog = document.querySelector(".newsies")
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("newsStateChanged", () => {
+    NewsList()
 })
+
+export const NewsList = () => {
+    getNews()
+        .then(() => {
+
+            let newsHTML = ""
+            let useNewNews = useNews()
+            for (const news of useNewNews) {
+                newsHTML += NewsHTMLConverter(news)
+            }
+            newsLog.innerHTML = newsHTML
+        })
+
+}
