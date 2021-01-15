@@ -17,8 +17,6 @@ const render = () => {
     `
 }
 
-// <input type="checkbox" id="taskComplete">
-
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveTask") {
