@@ -4,76 +4,62 @@ import { saveFriend, useFriends } from "../Friends/FriendsProvider.js"
 
 
 
-const eventHub = document.querySelector (".container")
+const eventHub = document.querySelector(".container")
 
 
 export const ForumHTMLConverter = (forumsObject) => {
     return `
         <section class="user">
-            <div class="user__text">Chat:${ forumsObject.text }</div>
-            <div class="user__author">Username: ${ forumsObject.username }</div>
-            <div class="user__timestamp">Timestamp: ${ new Date(forumsObject.timeStamp).toLocaleDateString('en-US')  }</div>
+            <div class="user__text">Chat:${forumsObject.text}</div>
+            <div class="user__author">Username: ${forumsObject.username}</div>
+            <div class="user__timestamp">Timestamp: ${new Date(forumsObject.timeStamp).toLocaleDateString('en-US')}</div>
             <div>
                 <button id="deleteForum--${forumsObject.id}">Delete</button>
                 <button id="addFriend--${forumsObject.userId}">Add User to Friends List</button>
             </div>
         </section>
             `
-            
-            
-            
-        }
+
+
+
+}
 
 
 // Friend: userId, friendId. userId(sessionStorage).getItem 
 // Friend Id is related to the forumsObject 
-        // Add event listner that uses current user id and user id of the poster
-    eventHub.addEventListener("click", clickEvent => {
-    
-            if (clickEvent.target.id.startsWith("addFriend--")) {
-                const [prefix, id] = clickEvent.target.id.split("--")
-                const friendId = parseInt(id)
-        
-                /*
-                    Invoke the function that performs the add Friend operation.
-        
-                    Once the operation is complete you should THEN invoke
-                    saving a friends to friends list 
-                */
-            saveFriend(friendId)
-            .then(
-                () => {
-                    const updatedFriends = useFriends()
-                    
-                    render(updatedFriends)
-                }
-                
-            )
-            }
-    const render = (forumsArray, friends) => {
+// Add event listner that uses current user id and user id of the poster
+eventHub.addEventListener("click", clickEvent => {
 
-                // Find the related forums
-                
-                const allFriendsConvertedToStrings = forumsArray.map( (forum) => {
-                    const relatedIdOfThePoster = friends.find(
-                        (friends) => {
-                    return friends.id === forum.userId
-                    }
-                    )
-                    // forum.username = relatedUsers.username
+    if (clickEvent.target.id.startsWith("addFriend--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+        const friendId = parseInt(id)
         
-                
-                return  ForumHTMLConverter (friends)
-                } ).join("")
+
             
-                // convert the forums objects to HTML with NoteHTMLConverter
-        
-            contentTarget.innerHTML = allFriendsConvertedToStrings
-                }
-    })
-        
+            const userId = sessionStorage.getItem("activeUser")
+            // const friendID = document.querySelector("#friend").value 
+            // Make a new object representation of a note
+            const newFriend = {
+                // Key/value pairs here
+                
+                friendId,
+                userId: parseInt(userId)
+            }
+        /*
+            Invoke the function that performs the add Friend operation.
+ 
+            Once the operation is complete you should THEN invoke
+            saving a friends to friends list 
+        */
+        saveFriend(newFriend)
+           
+    }
+})
 
-  
+
+
+
+
         // 
 //   "users": [
 //     {

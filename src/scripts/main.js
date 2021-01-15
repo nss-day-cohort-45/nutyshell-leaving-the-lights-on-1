@@ -5,6 +5,11 @@ import { ForumForm } from "./forum/ForumsForm.js";
 import { saveForumButton } from "./forum/SaveForumButton.js";
 
 
+LoginForm()
+RegisterForm()
+Nutshell()
+
+
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -13,7 +18,4 @@ import { saveForumButton } from "./forum/SaveForumButton.js";
         ensure that the Nutshell component gets rendered
 */
 
-LoginForm()
-RegisterForm()
-Nutshell()
 
