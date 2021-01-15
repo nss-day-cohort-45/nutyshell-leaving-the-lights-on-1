@@ -7,17 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/main.css">
-    <title>Document</title>
+    <title>Leaving The Lights On</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <h1>Leaving The Lights On</h1>
+        <h2>Your life in a nutshell.</h2>
+        <img class="defaultImage" src="../images/You.png" alt="default profile image">
+    </header>
     <article class="container">
         <article class="auth">
-            <section class="auth--login"></section>
+            <section class="auth--loginSection">
+                <h2>Welcome back!</h2>
+                <div class="auth--login">
+            </section>
                 <!-- <div class="spinner-border" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div> -->
-            <section class="auth--register"></section>
+            <section class="auth--registerSection">
+                <h2>Let's get started!</h2>
+                <div class="auth--register"></div>
+            </section>
         </article>
         <article class="dashboard">
             <!-- All your Nutshell are belong here -->
@@ -26,7 +39,10 @@
                 <div class="friendsDiv"></div>
             <div class="forumAndEventDiv"></div>
                 <div class="forumDiv"></div>
-                <div class="eventDiv"></div>
+                <div class="eventDiv">
+                    <div class="eventsList"></div>
+                    <div class="addEventBtnDiv"></div>
+                </div>
             <div class="weatherAndNewsDiv"></div>
                 <div class="weatherDiv"></div>
                 <div class="newsDiv"></div>
@@ -36,4 +52,9 @@
     <script src="./scripts/main.js" type="module"></script>
 
 </body>
+<footer>
+    <div class="footer">
+        <h6>&copy; 2021 Leaving the Lights On Inc.</h6>
+    </div>
+</footer>
 </html>

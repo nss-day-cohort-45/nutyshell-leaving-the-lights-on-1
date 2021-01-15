@@ -10,3 +10,14 @@ export const getEvents = () => {
         .then(eventsData =>
             events = eventsData)
 }
+
+export const saveNewEvent = (newEvent) => {
+    fetch ("http://localhost:8088/events", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEvent)
+    })
+        .then(getEvents)
+}
