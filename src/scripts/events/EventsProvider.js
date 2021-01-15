@@ -1,3 +1,5 @@
+const eventHub = document.querySelector(".container")
+
 let events = []
 
 export const useEvents = () => {
@@ -20,4 +22,17 @@ export const saveNewEvent = (newEvent) => {
         body: JSON.stringify(newEvent)
     })
         .then(getEvents)
+}
+
+export const deleteEventCard = eventId => {
+    return fetch (`http://localhost:8088/events/${eventId}`, {
+        method: "DELETE"
+    })
+        .then(getEvents)
+        .then(dispatchEventStateChangeEvent)
+}
+
+const dispatchEventStateChangeEvent = () => {
+    const eventCardsChangedEvent = new CustomEvent("eventCardStateChanged")
+    eventHub.dispatchEvent(eventCardsChangedEvent)
 }

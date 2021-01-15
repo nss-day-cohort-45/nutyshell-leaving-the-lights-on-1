@@ -14,7 +14,7 @@ export const EventHTMLConverter = (eventObject) => {
             <div>${eventObject.city} ${eventObject.state}, ${eventObject.zip}</div>
             <div class="eventButtons">
                 <button class="showWeatherBtn">Show Weather</button>
-                <button class="deleteEventBtn">Delete Event</button>
+                <button id="deleteEventBtn--${eventObject.id}">Delete Event</button>
             </div>
         <div>
     </section>
@@ -26,3 +26,4 @@ eventHub.addEventListener("click", clickEvent => {
         eventForm()
     }
 })
+
