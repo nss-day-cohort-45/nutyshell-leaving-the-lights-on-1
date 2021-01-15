@@ -50,26 +50,27 @@ export const ForumHTMLConverter = (forumsObject) => {
                 
             )
             }
-    const render = (forumsObject) => {
+    const render = (forumsArray, friends) => {
 
                 // Find the related forums
                 
-                const allForumsConvertedToStrings = forumsArray.map( (forum) => {
-                    const relatedUsers = users.find(
-                        (user) => {
-                    return user.id === forum.userId
+                const allFriendsConvertedToStrings = forumsArray.map( (forum) => {
+                    const relatedIdOfThePoster = friends.find(
+                        (friends) => {
+                    return friends.id === forum.userId
                     }
                     )
-                    forum.username = relatedUsers.username
+                    // forum.username = relatedUsers.username
         
                 
-                return  ForumHTMLConverter (forum)
+                return  ForumHTMLConverter (friends)
                 } ).join("")
             
                 // convert the forums objects to HTML with NoteHTMLConverter
         
-            contentTarget.innerHTML = allForumsConvertedToStrings
+            contentTarget.innerHTML = allFriendsConvertedToStrings
                 }
+    })
         
 
   
@@ -104,4 +105,4 @@ export const ForumHTMLConverter = (forumsObject) => {
 
 // Given a user wants to delete a previous message of theirs
 // When the user performs a gesture on the delete affordance in the chat message
-// Then that specific message should be removed from the database and the UI
+// Then that specific message should be removed from the database and the 
