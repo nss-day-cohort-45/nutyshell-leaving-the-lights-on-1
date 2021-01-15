@@ -1,4 +1,4 @@
-const contentTarget = document.querySelector(".auth--login")
+const contentTarget = document.querySelector(".auth--loginSection")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {

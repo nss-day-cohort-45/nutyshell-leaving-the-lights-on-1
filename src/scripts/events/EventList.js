@@ -2,6 +2,7 @@ import { EventHTMLConverter } from './EventHTMLConverter.js'
 import { useEvents, getEvents } from './EventsProvider.js'
 
 const eventTarget = document.querySelector(".eventsList")
+const eventHub = document.querySelector(".container")
 
 let eventCards = []
 

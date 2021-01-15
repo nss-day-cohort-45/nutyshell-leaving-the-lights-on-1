@@ -54,3 +54,4 @@ eventHub.addEventListener("click", clickEvent => {
         saveNewEvent(newEventEntry)
     }
 })
+

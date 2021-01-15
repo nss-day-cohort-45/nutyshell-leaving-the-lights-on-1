@@ -97,6 +97,34 @@ button {
     background-color: white;
 }
 
+.dashboard {
+    display: flex;
+}
+
+.taskAndFriendsDiv, .forumAndEventDiv, .weatherAndNewsDiv {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    margin: .5rem;
+}
+
+.eventDiv, .taskDiv, .friendsDiv, .forumDiv, .weatherDiv, .newsDiv {
+    background-color: rgb(203, 243, 240);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: .5rem;
+    width: 100%;
+    min-height: 15rem;
+}
+
+.eventName {
+    color: black;
+}
+
+.eventCard {
+    background-color: white;
+}
+
 .footer {
     display: flex;
     justify-content: center;
