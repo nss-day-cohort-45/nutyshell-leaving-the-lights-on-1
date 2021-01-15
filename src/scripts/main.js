@@ -3,6 +3,11 @@ import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
 
+import { TaskList } from "./tasks/TaskList.js"
+TaskList()
+
+import { TaskForm } from "./tasks/TaskForm.js"
+TaskForm()
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -13,3 +18,5 @@ import { Nutshell } from "./Nutshell.js"
 
 LoginForm()
 RegisterForm()
+
+
