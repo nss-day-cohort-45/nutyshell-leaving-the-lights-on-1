@@ -1,5 +1,5 @@
 // S.Gilmore calling and using app state json data. Listening for state
-// change and delete events.
+// stretch goals:change and delete events.
 
 const eventHub = document.querySelector(".container")
 

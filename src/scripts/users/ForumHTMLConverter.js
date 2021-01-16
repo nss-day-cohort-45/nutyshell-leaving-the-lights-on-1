@@ -1,4 +1,5 @@
-// S.Gilmore. File to convert json data into html
+// S.Gilmore. File to convert json data of posted forms into html
+// Stretch goal- activate delete forum button
 
 import { saveFriend, useFriends } from "../Friends/FriendsProvider.js"
 
@@ -21,74 +22,33 @@ export const ForumHTMLConverter = (forumsObject) => {
             `
 
 
+    // Friend Id is related to the forumsObject 
+    // Add event listner that uses current user id and user id of the poster
+    eventHub.addEventListener("click", clickEvent => {
 
-}
+        if (clickEvent.target.id.startsWith("addFriend--")) {
+            const [prefix, id] = clickEvent.target.id.split("--")
+            const friendId = parseInt(id)
 
 
-// Friend: userId, friendId. userId(sessionStorage).getItem 
-// Friend Id is related to the forumsObject 
-// Add event listner that uses current user id and user id of the poster
-eventHub.addEventListener("click", clickEvent => {
 
-    if (clickEvent.target.id.startsWith("addFriend--")) {
-        const [prefix, id] = clickEvent.target.id.split("--")
-        const friendId = parseInt(id)
-        
-
-            
             const userId = sessionStorage.getItem("activeUser")
             // const friendID = document.querySelector("#friend").value 
             // Make a new object representation of a note
             const newFriend = {
                 // Key/value pairs here
-                
+
                 friendId,
                 userId: parseInt(userId)
             }
-        /*
-            Invoke the function that performs the add Friend operation.
- 
-            Once the operation is complete you should THEN invoke
-            saving a friends to friends list 
-        */
-        saveFriend(newFriend)
-           
-    }
-})
+            /*
+                Invoke the function that performs the add Friend operation.
+     
+                Once the operation is complete you should THEN invoke
+                saving a friends to friends list 
+            */
+            saveFriend(newFriend)
 
+        }
+    })}
 
-
-
-
-        // 
-//   "users": [
-//     {
-//       "id": 1,
-//       "email": "varchar",
-//       "username": "varchar",
-//       "zip": 12157
-// //     },
-// "forums": [
-//     {
-//       "timeStamp": 1610640906213,
-//       "text": "is it working?",
-//       "id": 2,
-//       "userId": 1
-//     },
-
-// TODO: So now I have a button I want a click event attached to that button that will add the targeted forumsObject to my friends List
-// As a user, I should be able to activate my account and chat with other users. All messages are public, which means that all users can see them.
-
-// Acceptance Criteria
-// Given a user wants to enter in a chat message
-// When the user activates their account
-// And enters a message into the New message text input
-// Then their message should appear in the Chat area, prepended with the user's name
-
-// Given a user is viewing, or entering in chat messages
-// When a new message is entered by any user, and there are more messages than can fit in the default size of the chat history
-// Then the most recent message should always be made visible at the bottom of the chat history
-
-// Given a user wants to delete a previous message of theirs
-// When the user performs a gesture on the delete affordance in the chat message
-// Then that specific message should be removed from the database and the 

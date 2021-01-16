@@ -1,4 +1,4 @@
-// S.Gilmore  Adding html for chat/forum area. Stretch goal- user shouldnt have to enter their name.
+// S.Gilmore  adding to  forums and allowing  access to information to be displayed in the dom
 
 import { getUsers, useUsers } from "../users/UserProvider.js";
 import { getForums, saveForums, useForums } from "./ForumsProvider.js"; 
@@ -12,21 +12,16 @@ eventHub.addEventListener("click", clickEvent => {
     
     if (clickEvent.target.id === "saveForums") {
 
-        // const author =document.querySelector("#author").value
-        // const timeStamp= document.querySelector("timeStamp").value
         const text = document.querySelector("#text").value
         const userId = sessionStorage.getItem("activeUser")
-        // const friendID = document.querySelector("#friend").value 
-        // Make a new object representation of a note
+       
+        // Make a new object representation of a forum
         const newForums = {
             // Key/value pairs here
             timeStamp: Date.now(),
             text,
             userId: parseInt(userId)
-            // friendID: 
-            // friendId
-// ****I think i need friendId to be able to match private messages. didnt use it in forumHTML since user doesnt need to see
-// but we might want to filter over it so that we can see who is talking to whom?
+           
         }
 
         // Change API state and application state
@@ -55,6 +50,3 @@ export const ForumForm = () => {
         render(allFormsList)
     })
 }
-
-
-        // <input type="text" id="author" placeholder="Whos'the author?">

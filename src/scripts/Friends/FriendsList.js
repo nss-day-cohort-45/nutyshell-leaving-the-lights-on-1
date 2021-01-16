@@ -2,17 +2,15 @@ import { getUsers, useUsers } from "../users/UserProvider.js"
 import { useFriends, getFriends } from "./FriendsProvider.js"
 import { FriendsHTMLConverter } from "./FriendsHTMLConverter.js" ;
 
-// S.Gilmore Using this form to render all friends and to allow the add friends button in forums form to work
+// S.Gilmore Using this form to render all friends on the DOM
+// Stretch goals: Allow friends to only be matched once (i.e. no duplicate friends or friending self)
 
 
 
 const eventHub = document.querySelector(".container")
 const friendsList = document.querySelector(".friendsDiv")
 
-
-// eventHub.addEventListener("newsStateChanged", () => {
-//     NewsList()
-// })
+// Map over all available friends, find friends whos user id matches your friends user id and convert that info into html format
 
 export const FriendsList = () => {
     getFriends()

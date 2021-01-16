@@ -1,3 +1,4 @@
+// S.Gilmore access friends from app state
 let friends = []
 
 const eventHub = document.querySelector(".container")

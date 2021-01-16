@@ -1,3 +1,5 @@
+// S. Gilmore HTMl representation of a friend object
+// stretch goal: make delete friends button usable
 
 export const FriendsHTMLConverter = (friendObject) => {
     return `

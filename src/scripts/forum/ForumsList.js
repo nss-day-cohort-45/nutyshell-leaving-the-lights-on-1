@@ -1,7 +1,8 @@
+// S.Gilmore allow visibility and listing of forums
+
 import { getForums, useForums } from "./ForumsProvider.js";
 import { ForumHTMLConverter } from "../users/ForumHTMLConverter.js";
 import { getUsers, useUsers } from "../users/UserProvider.js";
-import { useFriends } from "../Friends/FriendsProvider.js";
 import {deleteForums} from "./ForumsProvider.js"
 
 
@@ -11,9 +12,7 @@ useForums()
 let users = []
 
 let visible = false
-// Query the DOM for the element that your notes will be added to 
 const contentTarget = document.querySelector(".forumDiv")
-// Define ye olde Evente Hubbe
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("saveForumClicked", () => {
@@ -78,16 +77,6 @@ const render = (forumsArray, users) => {
     contentTarget.innerHTML = allForumsConvertedToStrings
         }
 
-//         return `
-//             <section class="note">
-//                 <h2>Note about ${relatedCriminal.name}</h2>
-//                 ${note.noteText}
-//             </section>
-//         `
-//     })
-// }
-
-// Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
 export const forumList = () => {
 
     getForums()

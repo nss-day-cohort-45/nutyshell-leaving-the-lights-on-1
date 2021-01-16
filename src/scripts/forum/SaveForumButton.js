@@ -1,3 +1,5 @@
+// S.Gilmore save forum button
+
 const contentTarget = document.querySelector("#forumDiv")
 const eventHub = document.querySelector(".container")
 
