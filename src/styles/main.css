@@ -34,14 +34,27 @@ header {
     padding-right: 4rem;
     padding-bottom: 2rem;
 }
-
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .auth {
     display: flex;
     justify-content: center;
     /* flex-direction: column; */
-    max-width: 25rem;
-    margin: 0;
+    /*  */
+    /* margin: 0; */
     margin-top: 5rem;
+}
+
+.centerDefaultImg {
+    display: flex;
+    justify-content: center;
+}
+
+.emptySpace {
+    width: 42%;
 }
 
 .defaultImage {
@@ -50,19 +63,17 @@ header {
     max-height: 10rem;
     max-width: 10rem;
     margin-bottom: -5rem;
-    margin-left: 27rem;
 }
 
 .auth--loginSection {
     background-color: rgb(203, 243, 240);
-    /* background-image: url("../../images/loginImg.png"); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 20rem;
-    min-width: 23rem;
+    width: 23rem;
     border-radius: 10px;
-    margin-left: 34rem;
+    /* margin-left: 34rem; */
     padding: 4rem;
     margin-right: .5rem;
 }
@@ -73,7 +84,7 @@ header {
     flex-direction: column;
     justify-content: center;
     min-height: 20rem;
-    min-width: 23rem;
+    width: 23rem;
     border-radius: 10px;
     padding: 4rem;
     margin-left: .5rem;
@@ -84,7 +95,7 @@ header {
     flex-direction: column;
 }
 
-input {
+input, textarea {
     margin: .15rem;
     border: lightgray solid 1px;
     min-width: 15rem;
@@ -121,12 +132,16 @@ button {
     color: black;
 }
 
-.eventCard {
+.eventCard, .task, .news {
     background-color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 10px;
+}
+
+.showWeatherBtn, .saveEventBtn {
+    margin-bottom: .5rem
 }
 
 .footer {

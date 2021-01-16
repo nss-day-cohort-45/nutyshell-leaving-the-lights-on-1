@@ -1,8 +1,11 @@
-import { saveNewEvent } from './EventsProvider.js'
+import { renderEvents } from './EventList.js'
+import { saveNewEvent, useEvents, getEvents } from './EventsProvider.js'
 
-const eventFormLocation = document.querySelector('.eventDiv')
+
+const eventFormLocation = document.querySelector('.eventForm')
 const eventHub = document.querySelector('.container')
 
+/* The renderEventsForm is the HTML that accepts input from the user. */
 const renderEventsForm = () => {
     eventFormLocation.innerHTML = `
         <fieldset>
@@ -30,6 +33,10 @@ export const eventForm = () => {
     renderEventsForm()
 }
 
+/* This event listener is listening for a user to click
+the Save Event Button. When the button is clicked,
+it will send the information input by the user to
+the database.json file, using the saveNewEvent function. */
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEventBtn") {
         const name = document.querySelector("#eventName").value
@@ -52,6 +59,14 @@ eventHub.addEventListener("click", clickEvent => {
             userId: parseInt(userId)
         }
         saveNewEvent(newEventEntry)
+        getEvents()
+            .then( () => {
+            let eventCards = []
+            eventCards = useEvents()
+            renderEvents(eventCards)
+            })
+        /*The next two lines clear the Form from the DOM */
+        const targetForm = document.querySelector(".eventForm")
+        targetForm.innerHTML = ""
     }
 })
-

@@ -1,3 +1,5 @@
+import { renderEvents } from './EventList.js'
+
 const eventHub = document.querySelector(".container")
 
 let events = []
@@ -22,6 +24,7 @@ export const saveNewEvent = (newEvent) => {
         body: JSON.stringify(newEvent)
     })
         .then(getEvents)
+        .then(dispatchEventStateChangeEvent)
 }
 
 export const deleteEventCard = eventId => {

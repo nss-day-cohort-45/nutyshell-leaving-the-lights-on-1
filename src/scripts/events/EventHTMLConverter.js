@@ -2,7 +2,9 @@ import { eventForm } from './EventForm.js'
 
 const eventHub = document.querySelector(".container")
 
-
+/* The EventHTMLConverter populates the initial
+page load (after log in or register) to display
+the events that the user already has saved. */
 export const EventHTMLConverter = (eventObject) => {
     return `
     <section class="eventCard">
@@ -21,9 +23,14 @@ export const EventHTMLConverter = (eventObject) => {
     `
 }
 
+/* This event listener will populate the form
+that allows user to enter a new event to populate
+when they click the Add Event button */
 eventHub.addEventListener("click", clickEvent => {
+    const targetEventList = document.querySelector(".eventsList")
     if (clickEvent.target.id === "addEventBtn") {
         eventForm()
+        targetEventList.innerHTML = ""
     }
 })
 

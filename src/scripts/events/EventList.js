@@ -15,7 +15,7 @@ export const EventList = (events) => {
 }
 
 
-const renderEvents = (eventsArray) => {
+export const renderEvents = (eventsArray) => {
     const allEventsConvertedToStrings = eventsArray.map(
         (event) => {
             return EventHTMLConverter(event)
@@ -31,14 +31,8 @@ eventHub.addEventListener("click", clickEvent => {
         .then (
             ()=> {
                 const updatedEvents = useEvents()
-                // EventList(updatedEvents)
+                renderEvents(updatedEvents)
             }
         )
     }
 })
-
-// let events = useEvents()
-//         for (const event of events) {
-//             eventCards.push(EventHTMLConverter(event))
-//         }
-//         eventTarget.innerHTML += eventCards.join("")
