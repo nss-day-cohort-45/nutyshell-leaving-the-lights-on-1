@@ -42,9 +42,6 @@ header {
 .auth {
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
-    /*  */
-    /* margin: 0; */
     margin-top: 5rem;
 }
 
@@ -73,7 +70,6 @@ header {
     min-height: 20rem;
     width: 23rem;
     border-radius: 10px;
-    /* margin-left: 34rem; */
     padding: 4rem;
     margin-right: .5rem;
 }
@@ -98,7 +94,6 @@ header {
 input, textarea {
     margin: .15rem;
     border: lightgray solid 1px;
-    min-width: 15rem;
     border-radius: 5px;
 }
 
@@ -106,6 +101,7 @@ button {
     border: lightgray solid 1px;
     border-radius: 5px;
     background-color: white;
+    margin-top: 1rem;
 }
 
 .dashboard {
@@ -128,10 +124,16 @@ button {
     min-height: 15rem;
 }
 
-.eventName {
+.eventName, .taskName, .newsName {
     color: black;
 }
 
+.eventsList, .taskList, .newsies {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    max-height: 22rem;
+}
 .eventCard, .task, .news {
     background-color: white;
     margin-top: 1rem;
@@ -142,6 +144,25 @@ button {
 
 .showWeatherBtn, .saveEventBtn {
     margin-bottom: .5rem
+}
+
+.taskForm {
+    margin-top: 1rem;
+}
+
+.weatherList {
+    display: flex;
+    overflow: scroll;
+}
+
+.dailyForecast {
+    border: white 3px solid;
+}
+
+.newsy {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {

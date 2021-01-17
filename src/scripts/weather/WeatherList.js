@@ -5,19 +5,19 @@ const weatherLocation = document.querySelector(".weatherList")
 
 let weatherCards = []
 
-const WeatherList = () => {
+export const WeatherList = () => {
     getWeather()
     .then( () => {
         weatherCards = copiedWeather()
         renderWeather(weatherCards)
-    }
-    )
+    })
 }
 
-export const renderWeather = (weatherArray) => {
-    const allWeatherConvertedToStrings = weatherArray.map(
+const renderWeather = (weatherArray) => {
+    const allWeatherConvertedToStrings = weatherArray.daily.map(
         (event) => {
             return WeatherHTMLComponent(event)
         }).join("")
         weatherLocation.innerHTML = allWeatherConvertedToStrings
 }
+

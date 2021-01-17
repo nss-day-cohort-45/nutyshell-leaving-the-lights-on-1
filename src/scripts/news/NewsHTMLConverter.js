@@ -4,7 +4,7 @@ import { deleteNews } from "./NewsProvider.js"
 export const NewsHTMLConverter = (newsObject) => {
     return `
         <section class="news">
-            <div class="news__title">Article Title: ${newsObject.title}</div>
+            <div class="news__title"><h2 class="newsName">${newsObject.title}</h2></div>
             <div class="news__text">Synopsis: ${newsObject.synopsis}</div>
             <div class="news__author">URL: ${newsObject.url}</div>
             <div class="news__timestamp">Timestamp: ${new Date(newsObject.timestamp).toLocaleDateString('en-US')}</div>

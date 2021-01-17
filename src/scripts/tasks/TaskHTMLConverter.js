@@ -4,9 +4,9 @@ import { deleteTask } from "./TaskProvider.js"
 export const TaskHTMLConverter = (taskObject) => {
     return `
         <section class="task">
-            <div class="task--name">New Task: ${taskObject.name}</div>
+            <div class="task--name"><h2 class="taskName">${taskObject.name}</h2></div>
             <div class="task--completionDate">Complete Task By: ${taskObject.completionDate}</div>
-            <input type="checkbox" id="taskComplete--${taskObject.id}" name="taskComplete--${taskObject.id}" value="${taskObject.completion}">
+            <input class="checkbox" type="checkbox" id="taskComplete--${taskObject.id}" name="taskComplete--${taskObject.id}" value="${taskObject.completion}">
                 <label for="taskComplete--${taskObject.id}">Task Complete</label><br>
             <button id="taskDelete--${taskObject.id}">Delete Task</button>
         </section>

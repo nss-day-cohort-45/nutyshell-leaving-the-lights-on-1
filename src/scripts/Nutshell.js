@@ -6,8 +6,9 @@ import { renderAddEventBtn } from "./events/AddEventBtn.js"
 import { TaskList } from "./tasks/TaskList.js"
 import { getTasks } from "./tasks/TaskProvider.js"
 import { TaskForm } from "./tasks/TaskForm.js"
-//import { renderWeather } from './weather/WeatherList.js'
-
+import { WeatherList } from './weather/WeatherList.js'
+import { copiedWeather, getWeather } from "./weather/WeatherProvider.js"
+import "./weather/WeatherProvider.js"
 
 const eventHub = document.querySelector(".container")
 
@@ -22,7 +23,9 @@ export const Nutshell = () => {
         TaskList()
         getTasks()
         TaskForm()
-        //renderWeather()
+        WeatherList()
+        getWeather()
+        copiedWeather()
     })
 }
 
