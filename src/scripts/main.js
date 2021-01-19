@@ -1,6 +1,8 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { ForumForm } from "./forum/ForumsForm.js";
+import { saveForumButton } from "./forum/SaveForumButton.js";
 
 
 LoginForm()
@@ -15,3 +17,5 @@ Nutshell()
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
+
+
