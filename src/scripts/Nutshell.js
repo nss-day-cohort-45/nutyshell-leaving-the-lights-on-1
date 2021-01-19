@@ -1,3 +1,6 @@
+import { ForumHTMLConverter } from "./users/ForumHTMLConverter.js"
+import { ForumForm } from "./forum/ForumsForm.js";
+import { forumList } from "./forum/ForumsList.js";
 import { NewsList } from "./news/NewsList.js"
 import { newsForms } from "./news/NewsForm.js"
 import { getNews } from "./news/NewsProvider.js"
@@ -9,6 +12,9 @@ import { TaskForm } from "./tasks/TaskForm.js"
 import { WeatherList } from './weather/WeatherList.js'
 import { copiedWeather, getWeather } from "./weather/WeatherProvider.js"
 import "./weather/WeatherProvider.js"
+import { FriendsList } from "./Friends/FriendsList.js";
+
+
 
 const eventHub = document.querySelector(".container")
 
@@ -26,6 +32,10 @@ export const Nutshell = () => {
         WeatherList()
         getWeather()
         copiedWeather()
+        ForumForm()
+        forumList()
+        FriendsList()
+
     })
 }
 
