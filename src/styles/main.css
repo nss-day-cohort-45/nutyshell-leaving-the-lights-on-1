@@ -128,13 +128,13 @@ button {
     color: black;
 }
 
-.eventsList, .taskList, .newsies {
+.eventsList, .taskList, .newsies, .forumsList {
     display: flex;
     flex-direction: column;
     overflow: scroll;
     max-height: 22rem;
 }
-.eventCard, .task, .news {
+.eventCard, .task, .news, .user, .friends {
     background-color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -147,6 +147,10 @@ button {
 }
 
 .taskForm {
+    margin-top: 1rem;
+}
+
+.forumText {
     margin-top: 1rem;
 }
 
