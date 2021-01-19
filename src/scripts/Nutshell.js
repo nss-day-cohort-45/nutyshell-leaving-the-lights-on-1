@@ -15,7 +15,6 @@ import "./weather/WeatherProvider.js"
 import { FriendsList } from "./Friends/FriendsList.js";
 
 
-
 const eventHub = document.querySelector(".container")
 
 export const Nutshell = () => {

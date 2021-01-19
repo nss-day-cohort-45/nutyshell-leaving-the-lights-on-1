@@ -6,7 +6,7 @@ import { getForums, saveForums, useForums } from "./ForumsProvider.js";
 
 
 const eventHub = document.querySelector(".container")
-const contentTarget= document.querySelector(".forumsList")
+const contentTarget= document.querySelector(".forumForm")
 
 eventHub.addEventListener("click", clickEvent => {
     
@@ -35,12 +35,10 @@ const render = () => {
     // This is showing on the page
     
     contentTarget.innerHTML = `
-    <textarea id="text" placeholder="Write Your Note Here"></textarea>
-    
-    
-    
-    
-    <button id="saveForums">Save Note</button>
+    <section class="forumText">
+        <textarea id="text" placeholder="Write Your Note Here"></textarea>
+        <button id="saveForums">Save Note</button>
+    </section>
     `
 }
 export const ForumForm = () => {

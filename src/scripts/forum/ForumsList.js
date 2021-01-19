@@ -12,7 +12,7 @@ useForums()
 let users = []
 
 let visible = false
-const contentTarget = document.querySelector(".forumDiv")
+const contentTarget = document.querySelector(".forumsList")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("saveForumClicked", () => {

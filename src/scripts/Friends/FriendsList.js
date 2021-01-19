@@ -8,7 +8,7 @@ import { FriendsHTMLConverter } from "./FriendsHTMLConverter.js" ;
 
 
 const eventHub = document.querySelector(".container")
-const friendsList = document.querySelector(".friendsDiv")
+const friendsList = document.querySelector(".friendsList")
 
 // Map over all available friends, find friends whos user id matches your friends user id and convert that info into html format
 
