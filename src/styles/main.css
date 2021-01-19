@@ -1,0 +1,172 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    background-color: rgb(255, 191, 105);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -2rem;
+    padding-top: 4rem;
+    margin-left: -2rem;
+    padding-left: 4rem;
+    margin-right: -2rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.auth {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.centerDefaultImg {
+    display: flex;
+    justify-content: center;
+}
+
+.emptySpace {
+    width: 42%;
+}
+
+.defaultImage {
+    border-radius: 100%;
+    border: solid 2px rgb(255, 159, 28);
+    max-height: 10rem;
+    max-width: 10rem;
+    margin-bottom: -5rem;
+}
+
+.auth--loginSection {
+    background-color: rgb(203, 243, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 20rem;
+    width: 23rem;
+    border-radius: 10px;
+    padding: 4rem;
+    margin-right: .5rem;
+}
+
+.auth--registerSection {
+    background-color: rgb(46, 196, 182);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 20rem;
+    width: 23rem;
+    border-radius: 10px;
+    padding: 4rem;
+    margin-left: .5rem;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: .15rem;
+    border: lightgray solid 1px;
+    border-radius: 5px;
+}
+
+button {
+    border: lightgray solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.taskAndFriendsDiv, .forumAndEventDiv, .weatherAndNewsDiv {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    margin: .5rem;
+}
+
+.eventDiv, .taskDiv, .friendsDiv, .forumDiv, .weatherDiv, .newsDiv {
+    background-color: rgb(203, 243, 240);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: .5rem;
+    width: 100%;
+    min-height: 15rem;
+}
+
+.eventName, .taskName, .newsName {
+    color: black;
+}
+
+.eventsList, .taskList, .newsies {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    max-height: 22rem;
+}
+.eventCard, .task, .news {
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.showWeatherBtn, .saveEventBtn {
+    margin-bottom: .5rem
+}
+
+.taskForm {
+    margin-top: 1rem;
+}
+
+.weatherList {
+    display: flex;
+    overflow: scroll;
+}
+
+.dailyForecast {
+    border: white 3px solid;
+}
+
+.newsy {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}

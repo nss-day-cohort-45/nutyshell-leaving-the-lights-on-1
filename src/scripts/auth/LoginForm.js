@@ -1,8 +1,9 @@
-const contentTarget = document.querySelector(".auth--login")
+const contentTarget = document.querySelector(".auth--loginSection")
+const authTargeted = document.querySelector(".auth")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {
-    contentTarget.innerHTML = ""
+    authTargeted.innerHTML = ""
 })
 
 eventHub.addEventListener("click", e => {
