@@ -1,3 +1,9 @@
+/*
+WeatherHTMLComponent is responsible for displaying the forcast
+as the user logs in. It uses the icons provided by the OpenWeather,
+and displays the high & low temperature for day.
+*/
+
 export const WeatherHTMLComponent = (weather) => {
     let icon = weather.weather[0].icon
     
