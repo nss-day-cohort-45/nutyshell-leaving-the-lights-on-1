@@ -4,9 +4,13 @@ const eventHub = document.querySelector(".container")
 
 let events = []
 
+// useEvents takes a copy of the events array to be used elsewhere
+
 export const useEvents = () => {
     return events.slice()
 }
+
+//getEvents fetches the data on events from database.json
 
 export const getEvents = () => {
     return fetch("http://localhost:8088/events")
@@ -14,6 +18,8 @@ export const getEvents = () => {
         .then(eventsData =>
             events = eventsData)
 }
+
+//saveEvents will take the information entered by the user in the event form and save it to database.json
 
 export const saveNewEvent = (newEvent) => {
     fetch ("http://localhost:8088/events", {
@@ -26,6 +32,8 @@ export const saveNewEvent = (newEvent) => {
         .then(getEvents)
         .then(dispatchEventStateChangeEvent)
 }
+
+//deleteEventCard will delete individual event cards
 
 export const deleteEventCard = eventId => {
     return fetch (`http://localhost:8088/events/${eventId}`, {

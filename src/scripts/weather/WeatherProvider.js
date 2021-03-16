@@ -1,5 +1,10 @@
 import { settings } from "./settings.js"
 
+/*
+Using OpenWeather's 5 day forecast API, getWeather fetches the
+data, assigns it to weather and exports it via copiedWeather
+*/
+
 let weather = {}
 
 export const copiedWeather = () =>  weather
